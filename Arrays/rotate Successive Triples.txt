@@ -1,0 +1,13 @@
+public Listobject<T>[] rotateSuccessiveTripleInArray(Listobject<T>[] list)
+{
+    // Shift Array Triples like [0 1 2] -> [1 2 0]
+	
+     for(int i = 0; i < list.length / 3; i++) {
+        Listobject<T> tmp = list[3 * i];
+        list[3 * i] = list[3 * i + 1];
+        list[3 * i + 1] = list[3 * i + 2];
+        list[3 * i + 2] = tmp;
+    }
+
+    return list;
+}
