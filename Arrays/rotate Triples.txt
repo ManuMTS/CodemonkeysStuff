@@ -1,0 +1,9 @@
+public boolean rotateTriples(Listobject<T>[] array, int a, int b, int c)
+{
+    if(a < 0 || b < 0 || c < 0 || a >= array.length || b >= array.length || c >= array.length) return false;
+    Listobject<T> tmp = array[c];
+    array[c] = array[b];
+    array[b] = array[a];
+    array[a] = tmp;
+    return true;
+}
