@@ -1,0 +1,9 @@
+public Listobject<T>[] executeRotation(Listobject<T>[] list)
+{
+    for(int i = 0; i < list.length - 1; i += 2) {
+        Listobject<T> tmp = list[i + 1];
+        list[i + 1] = list[i];
+        list[i] = tmp;
+    }
+    return list;
+}

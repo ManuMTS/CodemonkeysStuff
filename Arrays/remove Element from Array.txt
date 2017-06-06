@@ -1,0 +1,11 @@
+public Listobject<T>[] executeDeletionFromArray(Listobject<T>[] array, int index)
+{
+    boolean skipped = false;
+    Listobject[] tmp = new Listobject[array.length - 1];
+    for(int i = 0; i < array.length; i++) {
+        if(i == index) skipped = true;
+        if(i != index && !skipped) tmp[i] = array[i];
+        if(i != index && skipped) tmp[i - 1] = array[i];
+    }
+    return tmp;
+}
