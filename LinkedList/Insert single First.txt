@@ -1,0 +1,10 @@
+public boolean insertSingleFirst(ListElement<T> el)
+{
+    if(el == null) return false;
+    int size = size();
+    ListElement<T> tmp = el;
+    tmp.setNext(getFirst());
+    setFirst(tmp);
+    setSize(size + 1);
+    return true;
+}
