@@ -1,9 +1,0 @@
-public ListElement<T> get(int idx)
-{
-    if(isEmpty() || idx >= size() || idx < 0) return null;
-    ListElement<T> head = getFirst();
-    for(int i = 0; i < idx; i++) {
-        head = head.next();
-    }
-    return head;
-}
