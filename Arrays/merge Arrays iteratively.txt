@@ -1,0 +1,25 @@
+public Listobject<T>[] executeMerge(Listobject<T>[] left, Listobject<T>[] right)
+{
+    int sizeL = left.length;
+    int sizeR = right.length;
+    int pL = 0;
+    int pR = 0;
+    Listobject[] tmp = new Listobject[sizeL + sizeR];
+    for(int i = 0; i < tmp.length; i++) {
+       if(pL == sizeL) {
+	    		tmp[i] = right[pR];
+	    		pR++;
+	    	} else if(pR == sizeR) {
+	    		tmp[i] = left[pL];
+	    		pL++;
+	    	}
+	    	else if(left[pL].compareTo(right[pR]) < 1) {
+		            tmp[i] = left[pL];
+		            pL += 1;
+		        } else {
+		            tmp[i] = right[pR];
+		            pR += 1;
+		        } 
+    }
+    return tmp;
+}

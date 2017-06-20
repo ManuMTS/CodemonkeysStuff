@@ -1,0 +1,17 @@
+public boolean insertSingleLast(ListElement<T> el)
+{
+    if(el == null) return false;
+    int size = size();
+    ListElement<T> tmp = el;
+    tmp.setNext(null);
+    if(isEmpty()) { 
+        setFirst(tmp);
+        setLast(tmp);
+        setSize(1);
+        return true;
+    }
+    getLast().setNext(tmp);
+    setLast(tmp);
+    setSize(size + 1);
+    return true;
+}

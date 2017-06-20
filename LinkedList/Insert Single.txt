@@ -1,0 +1,33 @@
+public boolean insertSingle(ListElement<T> el, int idx)
+{
+    if(el == null || idx > size() || idx < 0) return false;
+    ListElement<T> tmp = el;
+    tmp.setNext(null);
+    int size = size();
+    if(isEmpty()) {
+        setFirst(tmp);
+        setLast(tmp);
+        setSize(1);
+        return true;
+    }
+    if(idx == size()) {
+        setLast(tmp);
+        setSize(size + 1);
+    }
+    if(idx == 0) {
+        tmp.setNext(getFirst());
+        setFirst(tmp);
+        setSize(size + 1);
+        return true;
+    }
+   for(ListElement<T> p = getFirst(); p != null; p = p.next()) {
+       if (idx == 1) {
+           tmp.setNext(p.next());
+           p.setNext(tmp);
+           setSize(size + 1);
+           return true;
+       }
+       idx--;
+   }
+   return false;
+}
